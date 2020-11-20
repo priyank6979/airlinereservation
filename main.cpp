@@ -145,7 +145,7 @@ public://public member functions
         global++;//increment variable
         pnri=global;
     }
-    //brought to you by code-projects.org
+   
     int j_detaili()// function declaration and definition for journey details
     {
         cout << "Enter DateOfJourney(DDMMYY)." << "Please enter a valid date." << endl;;
