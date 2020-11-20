@@ -3,23 +3,23 @@
 #include<string.h>
 using namespace std;
 
-int glob=0; //global variables
+int glob=0; 
 int global=10;
 
-class d_booking //class  for domestic booking
+class d_booking 
 {
 protected:
     int pnr;
-    char f_d[10],toja[7],tojd[7]; //protected members
+    char f_d[10],toja[7],tojd[7]; 
     long int doj;
     int choice,src,dest;
-public://public member functions
+public:
     void d_pnr()
     {
-        glob++; // increment variable
+        glob++; 
         pnr=glob;
     }
-    int j_detail() // function declaration and definition for domestic journey
+    int j_detail() 
     {
         cout << "\nEnter DateOfJourney(DDMMYY)." << "Please enter a valid date." <<  endl;
         cin >> doj;
@@ -37,7 +37,7 @@ public://public member functions
             cout << "\3.Go Air(3)\t19:00\t\t22:05\t\tRs.6000\t\tRefundable\n";
         }
 
-        else if((src==1 && dest==3) || (src==3 && dest==1))//condition
+        else if((src==1 && dest==3) || (src==3 && dest==1))
         {
             cout << "\t \t \tFlights Found" << endl << endl;
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
@@ -46,7 +46,7 @@ public://public member functions
             cout << "\3.Go Air(3)\t19:00\t\t22:05\t\tRs.6000\t\tRefundable\n";
         }
 
-        else if((src==1 && dest==4) || (src==4 && dest==1))//condition
+        else if((src==1 && dest==4) || (src==4 && dest==1))
         {
             cout << "\t \t \tFlights Found" << endl << endl;
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
@@ -55,7 +55,7 @@ public://public member functions
             cout << "\3.Go Air(3)\t19:00\t\t22:05\t\tRs.6100\t\tRefundable\n";
         }
 
-        else if((src==2 && dest==3) || (src==3 && dest==2))//condition
+        else if((src==2 && dest==3) || (src==3 && dest==2))
         {
             cout << "\t \t \tFlights Found" << endl << endl;
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
@@ -64,7 +64,7 @@ public://public member functions
             cout << "\3.Go Air(3)\t19:00\t\t22:05\t\tRs.2890\t\tRefundable\n";
         }
 
-        else if((src==2 && dest==4) || (src==4 && dest==2))//condition
+        else if((src==2 && dest==4) || (src==4 && dest==2))
         {
             cout << "\t \t \tFlights Found" << endl << endl;
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
@@ -72,7 +72,7 @@ public://public member functions
             cout << "\2.Fly Dubai(2)\t14:00\t\t17:05\t\tRs.4500\t\tRefundable\n";
             cout << "\3.Go Air(3)\t19:00\t\t22:05\t\tRs.6000\t\tRefundable\n";
         }
-        else if((src==3 && dest==4) || (src==4 && dest==3))//condition
+        else if((src==3 && dest==4) || (src==4 && dest==3))
          {
             cout << "\t \t \tFlights Found" << endl << endl;
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
@@ -80,7 +80,7 @@ public://public member functions
             cout << "\2.Fly Dubai(2)\t14:00\t\t17:05\t\tRs.5508\t\tRefundable\n";
             cout << "\3.Go Air(3)\t19:00\t\t22:05\t\tRs.6050\t\tRefundable\n";
         }
-        else if(src==dest)//condition
+        else if(src==dest)
         {
             cout << "\nSource and destination can't be same.\nTry again\n\n\n" << endl;
             return j_detail();
@@ -93,37 +93,37 @@ public://public member functions
 
     }
 
-    int  select_flight() //function declaration and definition for selecting flight
+    int  select_flight() 
     {   cout << "\nEnter your choice" << endl;
         cin >> choice;
-        switch(choice) // switch case
+        switch(choice) 
         {
-          case 1://condition
+          case 1:
                 cout << "\nFlight selected:"<<endl;
                 cout << "Qantas"<<endl;
-                strcpy(f_d,"Qantas");//copy to string
+                strcpy(f_d,"Qantas");
                 cout << "Departure Time : 08:00"<<endl;
                 cout<<"Arrival Time: 11:05"<<endl;
-                strcpy(tojd,"8:00"); //copy to string
-                strcpy(toja,"11:05");// copy to string
+                strcpy(tojd,"8:00"); 
+                strcpy(toja,"11:05");
                 break;
           case 2://condition
                 cout << "\nFlight selected:"<<endl;
                 cout << "Fly Dubai"<<endl;
-                strcpy(f_d,"Fly Dubai");//copy to string
+                strcpy(f_d,"Fly Dubai");
                 cout << "Departure Time : 14:00"<<endl;
                 cout<<"Arrival Time: 17:05"<<endl;
-                strcpy(tojd,"14:00");//copy to string
-                strcpy(toja,"17:05");//copy to string
+                strcpy(tojd,"14:00");
+                strcpy(toja,"17:05");
                 break;
           case 3://condition
                 cout << "\nFlight selected:" << endl;
                 cout << "Go Air" << endl;
-                strcpy(f_d,"Go Air");//copy to string
+                strcpy(f_d,"Go Air");
                 cout << "Departure Time : 19:00" << endl;
                 cout<<"Arrival Time: 22:05" << endl;
-                strcpy(tojd,"19:00");//copy to string
-                strcpy(toja,"22:05");//copy to string
+			strcpy(tojd,"19:00");
+                strcpy(toja,"22:05");
                 break;
           default://condition
                 cout << "Wrong input entered.\nTry again" << endl;
@@ -132,21 +132,21 @@ public://public member functions
     }
 };
 
-class i_booking//class for international booking
+class i_booking
 {
-protected://protected members
+protected:
     int pnri;
     char f_i[10],tojai[7],tojdi[7];
     long int doji;
     int srci,desti,choicei;
-public://public member functions
+public:
     void i_pnr()
     {
-        global++;//increment variable
+        global++;
         pnri=global;
     }
    
-    int j_detaili()// function declaration and definition for journey details
+    int j_detaili()
     {
         cout << "Enter DateOfJourney(DDMMYY)." << "Please enter a valid date." << endl;;
         cin >> doji;
@@ -157,7 +157,7 @@ public://public member functions
         cin >> desti;
         cout << "\t \t \tFlights Found" << endl << endl;
 
-        if((srci==1 && desti==3) || (srci==3 && desti==1))//condition
+        if((srci==1 && desti==3) || (srci==3 && desti==1))
         {
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
             cout << "\1.Vistara(1)\t10:00\t\t14:05\t\tRs.25000\tRefundable\n";
@@ -165,7 +165,7 @@ public://public member functions
             cout << "\3.Emirates(3)\t18:00\t\t22:05\t\tRs.24000\tRefundable\n";
         }
 
-        else if((srci==1 && desti==4) || (srci==4 && desti==1))//condition
+        else if((srci==1 && desti==4) || (srci==4 && desti==1))
         {
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
             cout << "\1.Vistara(1)\t10:00\t\t14:05\t\tRs.25500\tRefundable\n";
@@ -173,7 +173,7 @@ public://public member functions
             cout << "\3.Emirates(3)\t18:00\t\t22:05\t\tRs.24650\t\tRefundable\n";
         }
 
-        else if((srci==1 && desti==5) || (srci==5 || desti==1))//condition
+        else if((srci==1 && desti==5) || (srci==5 || desti==1))
         {
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
             cout << "\1.Vistara(1)\t10:00\t\t14:05\t\tRs.52500\tRefundable\n";
@@ -181,7 +181,7 @@ public://public member functions
             cout << "\3.Emirates(3)\t18:00\t\t22:05\t\tRs.64892\tRefundable\n";
         }
 
-        else if((srci==2 && desti==3) || (srci==3 && desti==2))//condition
+        else if((srci==2 && desti==3) || (srci==3 && desti==2))
         {
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
             cout << "\1.Vistara(1)\t10:00\t\t14:05\t\tRs.17800\tRefundable\n";
@@ -189,14 +189,14 @@ public://public member functions
             cout << "\3.Emirates(3)\t18:00\t\t22:05\t\tRs.18700\tRefundable\n";
         }
 
-        else if((srci==2 && desti==4) || (srci==4 && desti==2))//condition
+        else if((srci==2 && desti==4) || (srci==4 && desti==2))
         {
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
             cout << "\1.Vistara(1)\t10:00\t\t14:05\t\tRs.32000\tRefundable\n";
             cout << "\2.Fly Dubai(2)\t14:00\t\t18:05\t\tRs.38500\tRefundable\n";
             cout << "\3.Emirates(3)\t18:00\t\t22:05\t\tRs41259\tRefundable\n";        }
 
-        else if(srci==2 && desti==5 || (srci==5 && desti==2))//condition
+        else if(srci==2 && desti==5 || (srci==5 && desti==2))
         {
             cout << "Airline:\tDeparture:\tArrival:\tPrice:\t\tCategory:\n";
             cout << "\1.Vistara(1)\t10:00\t\t14:05\t\tRs.82500\tRefundable\n";
@@ -204,7 +204,7 @@ public://public member functions
             cout << "\3.Emirates(3)\t18:00\t\t22:05\t\tRs81478\tRefundable\n";
 
         }
-        else if(srci==desti)//condition
+        else if(srci==desti)
         {
             cout << "wrong input entered.\nTry again\n\n\n"<< endl;
             return j_detaili();
@@ -217,38 +217,38 @@ public://public member functions
 
     }
 
-    int select_flighti()//function declaration and definition for selecting flight
+    int select_flighti()
     {
         cout << "\nEnter your choice" << endl;
         cin >> choicei;
-        switch(choicei)//switch case
+        switch(choicei)
         {
-        case 1://condition
+        case 1:
             cout << "\nFlight selected:" <<endl;
             cout << "Vistara" << endl;
-            strcpy(f_i,"Vistara");//copy to string
+            strcpy(f_i,"Vistara");
             cout << "Departure Time: 10:00" << endl;
             cout << "Arrival Time: 14:05" << endl;
-            strcpy(tojdi,"10:00");//copy to string
-            strcpy(tojai,"14:05");//copy to string
+            strcpy(tojdi,"10:00");
+            strcpy(tojai,"14:05");
             break;
         case 2://condition
                cout << "\nFlight selected:" << endl;
                cout << "Fly Dubai" << endl;
-               strcpy(f_i,"Fly Dubai");//copy to string
+               strcpy(f_i,"Fly Dubai");
                cout << "Departure Time: 14:00" << endl;
                cout << "Arrival Time: 18:05" << endl;
-               strcpy(tojdi,"14:00");//copy to string
-                strcpy(tojai,"18:05");//copy to string
+               strcpy(tojdi,"14:00");
+                strcpy(tojai,"18:05");
                 break;
         case 3://condition
             cout << "\nFlight selected:" << endl;
             cout << "Emirates" << endl;
-            strcpy(f_i,"Emirates");//copy to string
+            strcpy(f_i,"Emirates");
             cout << "Departure Time : 18:00" << endl;
             cout << "Arrival Time: 22:05" << endl;
-            strcpy(tojdi,"18:00");//copy to string
-            strcpy(tojai,"22:05");//copy to string
+            strcpy(tojdi,"18:00");
+            strcpy(tojai,"22:05");
             break;
         default://condition
             cout << "Wrong input entered" << endl;
@@ -258,17 +258,17 @@ public://public member functions
 };
 
 
-class passenger: public d_booking,public i_booking//class passenger publicly inherited from class d_booking and i_booking
+class passenger: public d_booking,public i_booking
 {
-protected://protected members
+protected:
     char f_name[20],l_name[20],email[50];
     int age,gender;
     long int c_no;
-public://public member functions
-    void p_detail(int x)//function declaration and definition
-    {   if(x==1)//if else for domestic and international booking selection
+public:
+    void p_detail(int x)
+    {   if(x==1)
         { j_detail();//function call
-          select_flight();//function call
+          select_flight();
         }
           else
           {  j_detaili();//function call1353
@@ -280,7 +280,7 @@ public://public member functions
         cout << "Last Name:";
         cin >> l_name;
     }
-    int gender_check()//to check gender input as valid
+    int gender_check()
     {
         cout << "\nGender:\nMale-press:1::\nFemale-press:2::";
         cin >> gender;
@@ -290,7 +290,7 @@ public://public member functions
             return gender_check();//function call
         }
     }
-       void more_details()//to take more details of the passenger
+       void more_details()
        {
         cout << "Age:";
         cin >> age;
@@ -307,17 +307,17 @@ public://public member functions
     }
 
 
-     int getpnr()//function to get pnr for domestic booking
+     int getpnr()
         {
             return pnr;
         }
 
-     int getpnri()//function to get pnr for international booking
+     int getpnri()
      {
          return pnri;
      }
 
-     void disp()//function to display details for domestic booking
+     void disp()
      {
          cout<<"PNR:" << pnr << endl;
          cout<<"Flight:" << f_d << endl;
@@ -327,7 +327,7 @@ public://public member functions
          cout<<"Arrival Time:" << toja;
      }
 
-      void dispi()//function to display details for international booking
+      void dispi()
      {
          cout<<"PNR:" << pnri << endl;
          cout<<"Flight:" << f_i << endl;
@@ -340,14 +340,14 @@ public://public member functions
 
 
 
-class payment//class for payment
+class payment
 {
 protected://protected members
     long
     int choice1,bank,card,date,cvv,user_id;
     char password[10];
 public://public members functions
-    void pay_detail()//function declaration and definition for payment method
+    void pay_detail()
     {     cout << "\n\n\nHow would you like to pay?:\n";
         cout << "\n\1.Debit Card(1) \n\2.Credit Card(2) \n\3.Net Banking(3)";
         cout << "\n\nEnter your choice";
@@ -391,53 +391,53 @@ public://public members functions
 
 };
 
-void createfile(passenger p)//file creation for domestic booking
+void createfile(passenger p)
 {  ofstream fin("domestic.txt",ios::binary|ios::app);
    fin.write((char*)&p,sizeof(p));//writing to file
    fin.close();//closing file
 }
 
-void cancelticket(int x)//function to cancel ticket
+void cancelticket(int x)
 {  passenger p;
     int f=0;
-   ifstream fout("domestic.txt",ios::binary|ios::app);//for reading file
-   ofstream fin("domestic1.txt",ios::binary|ios::app);//for writing to a new file
+   ifstream fout("domestic.txt",ios::binary|ios::app);
+   ofstream fin("domestic1.txt",ios::binary|ios::app);
    fout.read((char *)&p,sizeof(p));//reading file
    while(fout)
    {
      if(p.getpnr()!=x)//checking pnr
-      fin.write((char *)&p,sizeof(p));//writing to file
+      fin.write((char *)&p,sizeof(p));
       else
      {
          p.disp();//display details
          cout<<"\nYour Above ticket is being canceled:\n" << "Amount refunded: Rs 1000\n";
-         f++;//incrementing f if pnr found
+         f++;
      }
-     fout.read((char *)&p,sizeof(p));//reading another record from file
+     fout.read((char *)&p,sizeof(p));
    }
-   if(f==0)//if f==0,pnr not found
+   if(f==0)
     cout<<"Ticket not found\n";
-   fout.close();//closing file
-   fin.close();//closing file
-   remove("domestic.txt");//deleting old file
-   rename("domestic1.txt","domestic.txt");//renaming new file
+   fout.close();
+   fin.close();
+   remove("domestic.txt");
+   rename("domestic1.txt","domestic.txt");
 
 }
 
-void checkticket(int x)//function to check pnr or ticket
+void checkticket(int x)
 {  passenger p;
    int f=0;
-   ifstream fout("domestic.txt",ios::binary);//opening file
-   fout.read((char *)&p,sizeof(p));//reading file
+   ifstream fout("domestic.txt",ios::binary);
+   fout.read((char *)&p,sizeof(p));
    while(fout)
    {
-     if(p.getpnr()==x)//checking pnr
-     {p.disp();//display details
+     if(p.getpnr()==x)
+     {p.disp();
       cout<<"\nYour ticket"<<endl;
-      f++;//incrementing f if onr found
+      f++;
       break;
      }
-     fout.read((char *)&p,sizeof(p));//reading another record from the same file
+     fout.read((char *)&p,sizeof(p));
 
    }
    fout.close();//closing file
@@ -445,55 +445,55 @@ void checkticket(int x)//function to check pnr or ticket
    cout<<"Ticket not found"<<endl;
 
 }
-void createfilei(passenger p)//opening a file for international booking
+void createfilei(passenger p)
 {  ofstream fin("international.txt",ios::binary|ios::app);
-   fin.write((char*)&p,sizeof(p));//writing to file
+   fin.write((char*)&p,sizeof(p));
    fin.close();//closing file
 }
-void cancelticketi(int x)//function to cancel ticket
+void cancelticketi(int x)
 {  passenger p;
    int f=0;
-   ifstream fout("international.txt",ios::binary|ios::app);//opening file
-   ofstream fin("international1.txt",ios::binary|ios::app);//writing to a new file
+   ifstream fout("international.txt",ios::binary|ios::app);
+   ofstream fin("international1.txt",ios::binary|ios::app);
    fout.read((char *)&p,sizeof(p));//reading old file
    while(fout)
    {
-     if(p.getpnri()!=x)//checking pnr
+     if(p.getpnri()!=x)
       fin.write((char *)&p,sizeof(p));//writing to new file;
       else
      {
-         p.dispi();//display details
+         p.dispi();
          cout<<"Your Above ticket is being deleted:\n"<<"Amount refunded: Rs 1000\n";
-         f++;//incrementing f if pnr found
+         f++;
      }
-     fout.read((char *)&p,sizeof(p));//reading another record from old file
+     fout.read((char *)&p,sizeof(p));
    }
-   if(f==0)//if f==0,pnr not found
+   if(f==0)
     cout<<"\nTicket not found\n";
-   fout.close();//closing file
-   fin.close();//closing file
-   remove("international.txt");//deleting old file
-   rename("international1.txt","international.txt");//renaming new file
+   fout.close();
+   fin.close();
+   remove("international.txt");
+   rename("international1.txt","international.txt");
 
 }
-void checkticketi(int x)//function to check pnr or ticket
+void checkticketi(int x)
 {  passenger p;
    int f=0;
-   ifstream fout("international.txt",ios::binary);//opening file
-   fout.read((char *)&p,sizeof(p));//reading file
+   ifstream fout("international.txt",ios::binary);
+   fout.read((char *)&p,sizeof(p));
    while(fout)
    {
-     if(p.getpnri()==x)//checking pnr
-     {p.dispi();//display details
+     if(p.getpnri()==x)
+     {p.dispi();
       cout<<"\nYour ticket"<<endl;
-      f++;//incrementing f if pnr found
+      f++;
       break;
      }
-     fout.read((char *)&p,sizeof(p));//reading another record from the file
+     fout.read((char *)&p,sizeof(p));
 
    }
-   fout.close();//closing file
-   if(f==0)//if f==0, pnr not found
+   fout.close();
+   if(f==0)
    cout<<"Ticket not found"<<endl;
 
 }
@@ -504,13 +504,13 @@ void checkticketi(int x)//function to check pnr or ticket
 int main()//main function
 {
 
-    class d_booking d1;//object for class d_booking
-    class i_booking i1;//object for class i_booking
-    class passenger p1;//object for class passenger
-    class payment p2;//object for class payment
-    int ch,ch1,n;//integer variables
-    char input;//character variables
-    do//do while loop
+    class d_booking d1;
+    class i_booking i1;
+    class passenger p1;
+    class payment p2;
+    int ch,ch1,n;
+    char input;
+    do
     {
     	system("CLS");
     cout << "\n\n \t\tWelcome To Flight Reservation System" << endl << endl;
@@ -521,40 +521,40 @@ int main()//main function
     cout << "\n\n\t\t\t\1.Book Flight(1) \n\t\t\t\2.Cancel Fight(2) \n\t\t\t\3.Check Ticket(3) \n\t\t\t\4.Exit(4)" << endl;
     cout << "\n\t\t Please enter your choice:";
     cin >> ch;
-      switch(ch)//witch case
+      switch(ch)
       {
-          case 1://condition
+          case 1:
           system("CLS");
               cout << "\n\n\1.Domestic Fights(1) \n\2.International Flights(2)" << endl;
               cout << "\nPlease enter your option" << endl;
               cin >> ch1;
-              switch(ch1)//inner switch case
+              switch(ch1)
               {
-                   case 1://for booking domestic ticket
+                   case 1:
                         p1.d_pnr();
-                        p1.p_detail(1);//function calls
+                        p1.p_detail(1);
                         p1.gender_check();
                         p1.more_details();
                         p2.pay_detail();
                         p1.disp();
-                        createfile(p1);//call to create file
+                        createfile(p1);
                         break;
-                   case 2: //for booking international ticket
-                           p1.p_detail(2);//function calls
+                   case 2: 
+                           p1.p_detail(2);
                            p1.i_pnr();
                            p1.gender_check();
                            p1.more_details();
                            p2.pay_detail();
                            p1.dispi();
-                           createfilei(p1);//call to create file
+                           createfilei(p1);
                            break;
-                   default://wrong input
+                   default:
                     cout << "Wrong input entered\nTry again\n\n\n" << endl;
                     return main();
               }
           break;
           case 2:
-              //for canceling ticket
+             
               system("CLS");
               cout << "\1.Domestic Fights(1) \n\2.International Flights(2)" << endl;
                  cout << "\nPlease enter your option" << endl;
@@ -563,12 +563,12 @@ int main()//main function
                 {
                    cout << "Please enter your PNR no.:" << endl;
                    cin>>n;
-                   cancelticket(n);//function call for domestic booking cancellation
+                   cancelticket(n);
                 }
                  else if(ch1==2)
                {  cout << "Please enter your PNR no.:" << endl;
                   cin>>n;
-                  cancelticketi(n);//function call for international cancellation
+                  cancelticketi(n);
                }
                else
                {
@@ -576,7 +576,7 @@ int main()//main function
                    return main();
                }
                break;
-          case 3://for displaying booked ticket details
+          case 3:
           system("CLS");
                   cout << "\1.Domestic Fights(1) \n\2.International Flights(2)" << endl;
                   cout << "\nPlease enter your option" << endl;
@@ -584,11 +584,11 @@ int main()//main function
                   if(ch1==1)
                   {cout << "Please enter your PNR no.:" << endl;
                   cin>>n;
-                  checkticket(n);}//function call to display domestic ticket details
+                  checkticket(n);}
                   else if(ch1==2)
                   {  cout << "Please enter your PNR no.:" << endl;
                      cin>>n;
-                     checkticketi(n);//function call to display domestic ticket details
+                     checkticketi(n);
                   }
                    else
                {
@@ -598,15 +598,15 @@ int main()//main function
                break;
             case 4:
 			system("CLS");
-			cout<<"\n\n\t\t\t\tBrought to you by code-projects.org";  
+			cout<<"\n\n\t\t\t\tPriyank and swesh ";
 			return 0; 
-          default://for wrong input
+          default:
             cout << "Wrong input entered\nTry again.\n\n\n\n" << endl;
             return main();
       }
     cout<<"\n\n\nDo you wish to continue:(y/Y)" << endl;
     cin >> input;
-  }while(input=='Y' || input=='y');//condition for do while loop
+  }while(input=='Y' || input=='y') 
 return 0;
 }
 
